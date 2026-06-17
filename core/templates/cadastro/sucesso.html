@@ -1,0 +1,19 @@
+{% extends "cadastro/base.html" %}
+
+{% block conteudo %}
+    <h1>Cadastro realizado com sucesso</h1>
+
+    <div class="dados">
+        <strong>Nome:</strong> {{ nome }}
+        <strong>Email:</strong> {{ email }}
+        <strong>Data de nascimento:</strong> {{ data_nascimento }}
+        <strong>Idade:</strong> {{ idade }}
+    </div>
+
+    {% if imagem %}
+        <h2>Imagem enviada</h2>
+        <img src="{{ MEDIA_URL }}{{ imagem }}" alt="Imagem enviada por {{ nome }}">
+    {% endif %}
+
+    <p><a href="{% url 'cadastro' %}">Realizar outro cadastro</a></p>
+{% endblock %}

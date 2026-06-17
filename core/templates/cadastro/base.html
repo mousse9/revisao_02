@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cadastro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+        }
+
+        main {
+            max-width: 600px;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input {
+            display: block;
+            margin-top: 5px;
+            padding: 6px;
+        }
+
+        button, .button {
+            margin-top: 15px;
+            padding: 8px 12px;
+        }
+
+        .erros {
+            color: red;
+        }
+
+        img {
+            max-width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        {% block conteudo %}{% endblock %}
+    </main>
+</body>
+</html>

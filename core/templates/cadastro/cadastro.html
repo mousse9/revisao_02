@@ -1,0 +1,39 @@
+{% extends "cadastro/base.html" %}
+
+{% block conteudo %}
+    <h1>Cadastro</h1>
+
+    {% if erros %}
+        <div class="erros">
+            {% for erro in erros %}
+                <p>{{ erro }}</p>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    <form action="{% url 'cadastro' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <label>
+            Nome
+            <input type="text" name="nome" value="{{ nome }}" required>
+        </label>
+
+        <label>
+            Email
+            <input type="text" name="email" value="{{ email }}" required>
+        </label>
+
+        <label>
+            Data de nascimento
+            <input type="date" name="data_nascimento" value="{{ data_nascimento }}" required>
+        </label>
+
+        <label>
+            Imagem
+            <input type="file" name="imagem" accept="image/*">
+        </label>
+
+        <button type="submit">Cadastrar</button>
+    </form>
+{% endblock %}
